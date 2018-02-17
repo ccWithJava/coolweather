@@ -25,7 +25,7 @@ public class AutoUpdateService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         // TODO: Return the communication channel to the service.
-        throw new UnsupportedOperationException("Not yet implemented");
+        return null;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AutoUpdateService extends Service {
             String weatherId = weather.basic.weatherId;
             String weatherUrl = "http://guolin.tech/api/weather?cityid="
                     + weatherId + "&key=fdd4597d7cb6461087b7d4133a8607ca";
-            HttpUtility.sendOkHttpRequest(weatherId, new Callback() {
+            HttpUtility.sendOkHttpRequest(weatherUrl, new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
                     e.printStackTrace();
